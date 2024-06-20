@@ -1,9 +1,13 @@
+import pyspark
 from pyspark.sql import SparkSession, DataFrame, functions
 
 
-def getSparkSession(app_name):
-    spark = SparkSession.builder.appName(app_name).master("local").getOrCreate()
-    return spark
+def getSparkSession(appName, conf):
+    if conf is not None:
+        return SparkSession.builder.config(conf=conf). \
+            appName(appName).master("local[*]").getOrCreate()
+    else:
+        return SparkSession.builder.appName(appName).master("local[*]").getOrCreate()
 
 
 ##
@@ -16,4 +20,3 @@ def get_all_distinct_column_values_of_column_in_str(dataframe: DataFrame, column
 ##
 # To get dataframe from specific data format
 # #
-
