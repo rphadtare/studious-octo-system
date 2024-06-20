@@ -1,0 +1,10 @@
+mysql-connector-python~=8.4.0
+flask~=3.0.3
+pyspark~=3.5.1
+pandas~=2.2.1
+numpy~=1.26.4
+colorlog~=6.8.2
+python-dotenv~=1.0.1
+gunicorn
+behave~=1.2.6
+matplotlib~=3.9.0
