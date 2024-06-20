@@ -22,6 +22,7 @@ def sample_spark_program():
     df = spark.sparkContext.parallelize(ids).toDF(IntegerType()).toDF("id")
     print(type(df), " - count: ", df.count())
     df.show(truncate=False)
+    spark.stop()
 
 
 def sample_pandas_program():
