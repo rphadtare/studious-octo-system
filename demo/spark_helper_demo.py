@@ -95,7 +95,7 @@ def demo_read_json_data():
     df.printSchema()
 
     d = dict([("driver", "com.mysql.cj.jdbc.Driver"), ("user", "myapp_user"), ("password", "Star@123$")])
-    df.write.jdbc(url="jdbc:mysql://localhost/myapp", table="employee", mode="append", properties=d)
+    df.write.jdbc(url="jdbc:mysql://localhost/myapp", table="employee", mode="overwrite", properties=d)
 
 
 def main():
